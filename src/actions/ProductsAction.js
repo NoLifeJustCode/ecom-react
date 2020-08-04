@@ -51,21 +51,21 @@ import APIUrls from '../helper/APIUrls'
  * Deletes product from db
  * @param {*} product_id 
  */
-function DELETE_PRODUCT(product_id){
+function DELETE_PRODUCT(product){
     return async function(dispatch){
      
             try{
                 let options={
-                    method:'POST',
+                    method:'DELETE',
                     mode:"cors",
                     headers:{
                         'content-type':'application/json'
                     },
-                    body:JSON.stringify(product_id)
+                    body:JSON.stringify(product)
                 }
-                let json=await fetch(APIUrls.delete_products,options).then(response=>response.json());
-          
-                dispatch(deleteProduct(json.id))
+                let json=await fetch(APIUrls.delete_products+'/'+product.id,options).then(response=>response.json());
+               
+                dispatch(deleteProduct(product.id))
             }catch(e){
                     console.log(e);
             }
@@ -92,7 +92,7 @@ function UPDATE_PRODUCT(product){
                     body:JSON.stringify(product)
                 }
                 let json=await fetch(APIUrls.add_products+'/'+product.id,options).then(response=>{
-                    console.log(response)
+                  //  console.log(response)
                    return response.json()
                 });
                 
@@ -196,12 +196,13 @@ function ADD_CART_PRODUCT(product){
                 },
                 body:JSON.stringify(cart)
             }
-            let response= await fetch(APIUrls.add_products,options)
+            let response= await fetch(APIUrls.add_cart_products,options)
+          //  console.log(response)
             if(response.status===201)
                 {
                     let json=await response.json();
                     product=json
-              
+                    
                     dispatch(addProductCart(json))
                 }
             else{

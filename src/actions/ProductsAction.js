@@ -8,6 +8,7 @@ ADD_PRODUCT_CART,
 SORT_PRODUCTS,
 RESET_FILTER,
 CLEAR_CART,
+SET_PRODUCTS_LIST
 
 } from './ActionTypes'
 import APIUrls from '../helper/APIUrls'
@@ -83,14 +84,17 @@ function UPDATE_PRODUCT(product){
                 product.rating=0;
             try{
                 let options={
-                    method:'POST',
+                    method:'PUT',
                     mode:"cors",
                     headers:{
                         'content-type':'application/json'
                     },
                     body:JSON.stringify(product)
                 }
-                let json=await fetch(APIUrls.delete_products,options).then(response=>response.json());
+                let json=await fetch(APIUrls.add_products+'/'+product.id,options).then(response=>{
+                    console.log(response)
+                   return response.json()
+                });
                 
                 dispatch(updateProduct(json))
             }catch(e){
@@ -350,6 +354,18 @@ function Nochange(message){
         message
     }
 }
+
+/**
+ * set products from server
+ */
+
+ function setProducts(products){
+     
+     return{
+        type:SET_PRODUCTS_LIST,
+        products
+     }
+ }
 export{
     ADD_PRODUCT,
     DELETE_PRODUCT,
@@ -359,5 +375,6 @@ export{
     ADD_CART_PRODUCT,
     SORT,
     RESET,
-    PLACE_ORDER
+    PLACE_ORDER,
+    setProducts
 }

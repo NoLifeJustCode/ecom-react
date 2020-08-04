@@ -1,4 +1,4 @@
-import { ADD_PRODUCTS, DELETE_PRODUCTS, UPDATE_PRODUCTS, UPDATE_QUANTITY, DELETE_CART_PRODUCTS, ADD_PRODUCT_CART,SORT_PRODUCTS, RESET_FILTER , CLEAR_CART} from "../actions/ActionTypes";
+import { ADD_PRODUCTS, DELETE_PRODUCTS, UPDATE_PRODUCTS, UPDATE_QUANTITY, DELETE_CART_PRODUCTS, ADD_PRODUCT_CART,SORT_PRODUCTS, RESET_FILTER , CLEAR_CART,SET_PRODUCTS_LIST} from "../actions/ActionTypes";
 import Noty from 'noty'
 // flast notification using noty
 function flash(text){
@@ -12,40 +12,22 @@ n.show();
 // initial state 
 const initState={
    products:[
-       {   id:'1',
-           avatar:'',
-           product_name:'fdas',
-           product_description:'fdsafsdfsd',
-           rating:'5',
-           product_price:'5645'
-       },
-       {
-        id:'2',
-        avatar:'',
-        product_name:'dfkjldfk',
-        product_description:'lkdsfakld dsafjdsfs d',
-        rating:'4.3',
-        product_price:'94465'
-    }
+       
    ],
-   cart:[{
-    id:0,
-    product:{   id:'1',
-    avatar:'',
-    product_name:'fdas',
-    product_description:'fdsafsdfsd',
-    rating:'5',
-    product_price:'5645'
-},
-    qty:0,
-    totalCost:0,
-   }]
+   cart:[]
 }
 function ProductsReducer(state=initState,action){
     // flast message for notification
     if(action.message)
         flash(action.message)
     switch(action.type){
+        //set products
+        case SET_PRODUCTS_LIST:{
+            return{
+                ...state,
+                products:action.products
+            }
+        }
         // Add products by pushing to end filter is ignored
         case ADD_PRODUCTS:{
             let products=[];

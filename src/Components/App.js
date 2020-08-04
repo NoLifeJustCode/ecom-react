@@ -9,10 +9,20 @@ import {
 import Products from './Products';
 import Add_Products from './Add_Products';
 import Cart from './Cart';
+import APIUrls from '../helper/APIUrls';
+import { connect } from 'react-redux';
+import {setProducts} from '../actions/ProductsAction'
 /**
  * Create Router and display views according to routes
  */
 class App extends React.Component{
+  componentDidMount(){
+    fetch(APIUrls.add_products)
+      .then(response=>response.json())
+      .then(json=>{
+        this.props.dispatch(setProducts(json));
+      })
+  }
   render(){
     
     return(
@@ -40,5 +50,9 @@ class App extends React.Component{
     )
   }
 }
+function mapStateToProps(state){
+  return{
 
-export default App;
+  }
+}
+export default connect(mapStateToProps)(App);

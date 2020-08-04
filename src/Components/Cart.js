@@ -5,7 +5,7 @@ import Cart_item from './Cart_item';
 import {PLACE_ORDER} from '../actions/ProductsAction'
 class Cart extends React.Component{
    
-
+// checkout for placing order
 
 checkout=()=>{
         this.props.dispatch(PLACE_ORDER())

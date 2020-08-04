@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e29aabd910bb66e2a495b3ba80dbe0d8",
+    "revision": "7e7a2514b0a4c1c04c4385610a928087",
     "url": "/ecom-react/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/ecom-react/static/css/2.bbe4ddbe.chunk.css"
   },
   {
-    "revision": "56ebd62ba46bf05b696c",
+    "revision": "42bbdcc6c0852a1b5c2e",
     "url": "/ecom-react/static/css/main.67eb0d48.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/ecom-react/static/js/2.035deb0c.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "56ebd62ba46bf05b696c",
-    "url": "/ecom-react/static/js/main.3ffcdf05.chunk.js"
+    "revision": "42bbdcc6c0852a1b5c2e",
+    "url": "/ecom-react/static/js/main.67f1ee92.chunk.js"
   },
   {
     "revision": "9fcf61f340900ef81f22",

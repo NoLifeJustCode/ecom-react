@@ -14,11 +14,11 @@ class NavBar extends React.Component{
             
             <div className="NavBar">
                 <div className="left">
-                <Link to ="/Products" ><div className="nav-link"> Products</div></Link>
-                <Link to="/Add-Product"><div className="nav-link">Add product</div></Link>
+                <Link to ="/ecom-react/Products" ><div className="nav-link"> Products</div></Link>
+                <Link to="/ecom-react/Add-Product"><div className="nav-link">Add product</div></Link>
                 </div>
                 <div className="right">
-                <Link to="/cart"><div className="nav-link"><img src="https://image.flaticon.com/icons/svg/3225/3225200.svg" alt="Cart"></img><sup>{this.props.cartQty}</sup></div></Link>
+                <Link to="/ecom-react/cart"><div className="nav-link"><img src="https://image.flaticon.com/icons/svg/3225/3225200.svg" alt="Cart"></img><sup>{this.props.cartQty}</sup></div></Link>
                 </div>
             </div>
             

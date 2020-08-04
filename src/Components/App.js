@@ -30,18 +30,22 @@ class App extends React.Component{
       <div className="App">
         
         <Router>
-          <NavBar/>
+            
           <Switch>
-            <Route exact path="/Products">
+          <Route > 
+              <NavBar/>
+              
+            <Route exact path="/ecom-react/Products">
             
               <Products />
 
             </Route>
-            <Route exact path="/Add-Product">
+            <Route exact path="/ecom-react/Add-Product">
               <Add_Products></Add_Products>
             </Route>
-            <Route exact path="/cart">
+            <Route exact path="/ecom-react/cart">
               <Cart></Cart>
+            </Route>
             </Route>
           </Switch>
         </Router>

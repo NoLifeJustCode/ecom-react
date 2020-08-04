@@ -9,6 +9,7 @@ class EditableProduct extends React.Component{
                 this.ratingRef=createRef();
                 this.descriptionRef=createRef();
             }
+            //save change to products after editing
             saveHandler=(e)=>{
                 let product={
                     id:this.props.product.id,
@@ -19,6 +20,7 @@ class EditableProduct extends React.Component{
                 }
                 this.props.saveHandler(product);
             }
+            //cancel edit
             resetHandler=(e)=>{
                 this.props.resetHandler(e);
             }

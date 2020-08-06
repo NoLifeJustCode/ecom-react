@@ -11,6 +11,7 @@ function ProductPage(props){
     
     const {product}=props.location.state
      function addToCart(e){
+        e.stopPropagation();
         props.dispatch(ADD_CART_PRODUCT(product))
     }
     return (

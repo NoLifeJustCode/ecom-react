@@ -9,6 +9,8 @@ class Options extends React.Component{
         this.handler=this.handler.bind(this);
     }
     handler(e){
+        e.stopPropagation();
+        e.preventDefault();
         if(this.props.handler)
             this.props.handler(e);
     }

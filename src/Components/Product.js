@@ -2,6 +2,7 @@ import React from 'react';
 
 import EditableProduct from './EditableProduct'
 import ProductView from './ProductView'
+import { Link } from 'react-router-dom';
 class Product extends React.Component{
         constructor(props){
             super(props);
@@ -58,7 +59,22 @@ class Product extends React.Component{
                  
                  <div className="products-display">
                      
-                { !this.state.edit&& <ProductView {...params } />}
+                { !this.state.edit&&
+                 <Link to={
+                     {
+                         pathname:"/ecom-react/Product",
+                         state:{
+                             product:params.product,
+                             
+                         }
+                            
+                             
+                         
+                     }
+                     }  >
+                 <ProductView {...params } />
+                 </Link>
+                 }
                 {this.state.edit && <EditableProduct {...params}/>}
                 
                 </div>

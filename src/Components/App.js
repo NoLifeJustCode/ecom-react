@@ -12,6 +12,7 @@ import Cart from './Cart';
 import APIUrls from '../helper/APIUrls';
 import { connect } from 'react-redux';
 import {setProducts} from '../actions/ProductsAction'
+import ProductPage from './ProductPage';
 /**
  * Create Router and display views according to routes
  */
@@ -34,7 +35,9 @@ class App extends React.Component{
           <Switch>
           <Route > 
               <NavBar/>
-              
+            <Route  path="/ecom-react/Product">
+              <ProductPage/>
+            </Route>  
             <Route exact path="/ecom-react/Products">
             
               <Products />

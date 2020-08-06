@@ -255,3 +255,37 @@ a sup{
 .nav-link img{
   height: 2em;
 }
+.product{
+  display: flex;
+  width: 40%;
+  /* justify-content: space-around; */
+  margin: auto;
+  min-height: 50%;
+}
+.product .left{
+  width: 40%;
+  height: 40%;
+  padding: 50px 10px;
+}
+
+.product .right{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 60%;
+  align-content: center;
+}
+
+.product .addtocart{
+  font-size: 1.2em;
+  text-transform: uppercase;
+  padding: .2em;
+  border-radius: .8em;
+  width: max-content;
+  align-self: flex-end;
+}
+
+.products-display a{
+    text-decoration: unset;
+    color:inherit;
+}

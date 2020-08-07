@@ -17,23 +17,30 @@ function ProductPage(props){
     return (
         
         <div className="product">
+            <div className="product-name ">
+                        {product.product_name}
+                </div>
+            <div className="details">
             <div className="left">
                     <img className="avatar" src={product.avatar} alt="avatar"></img>
             </div>
             <div className="right">
-                <div className="product-name">
-                        {product.product_name}
-                </div>
-                <div className="product-price">
+                
+                <h3 className="heading">Price</h3>
+                <div className="product-price margin-left-20">
+                    
                         {product.product_price}
                 </div>
-                <div className="product-rating">
+                <h3>Rating</h3>
+                <div className="product-rating margin-left-20">
                     <Rating rating={product.rating}/>
                 </div>
-                <div className="product-description">
+                <h3 className='heading'>Description</h3>
+                <div className="product-description margin-left-20">
                         {product.product_description}
                 </div>
                 <button onClick={addToCart} className="addtocart" >Add To Cart</button>
+            </div>
             </div>
         </div>
     )

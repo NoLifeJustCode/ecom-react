@@ -14,6 +14,7 @@ class ProductView extends React.Component{
             }
             //add product to cart
             addToCart=(e)=>{
+                    e.preventDefault();
                     e.stopPropagation();
                     this.props.dispatch(ADD_CART_PRODUCT(this.props.product))
             }

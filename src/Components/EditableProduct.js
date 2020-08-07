@@ -17,6 +17,7 @@ class EditableProduct extends React.Component{
                     product_price:this.priceRef.current.value,
                     rating:this.ratingRef.current.value,
                     product_description:this.descriptionRef.current.value,
+                    avatar:this.props.product.avatar
                 }
                 this.props.saveHandler(product);
             }
